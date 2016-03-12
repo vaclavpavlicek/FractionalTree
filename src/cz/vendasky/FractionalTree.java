@@ -22,4 +22,8 @@ public class FractionalTree {
                     this.actualFraction.getDenominator() - this.actualFraction.getNumerator());
         }
     }
+
+    public boolean checkIfRootFound() {
+        return this.actualFraction.getNumerator() == 1 && this.actualFraction.getDenominator() == 1;
+    }
 }

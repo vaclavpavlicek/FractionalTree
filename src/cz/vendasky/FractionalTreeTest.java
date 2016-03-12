@@ -3,6 +3,7 @@ package cz.vendasky;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class FractionalTreeTest {
@@ -19,6 +20,11 @@ public class FractionalTreeTest {
         Fraction parent = new Fraction(113, 41);
         fractionalTree.generateParentOfActualFraction();
         assertTrue(fractionalTree.getActualFraction().equals(parent));
+    }
+
+    @Test
+    public void shouldCheckIfRootFound() {
+        assertFalse(fractionalTree.checkIfRootFound());
     }
 
 }
