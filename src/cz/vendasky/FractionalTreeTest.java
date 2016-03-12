@@ -40,4 +40,9 @@ public class FractionalTreeTest {
         assertEquals("LLLLLLLLLRRRLRRR", fractionalTree.getPath());
     }
 
+    @Test
+    public void shouldReadFromInputFile() {
+        assertEquals("253 1110", FractionalTree.readFromInputFile("/home/vaclav/IdeaProjects/FractionalTree/outputs/01.in"));
+    }
+
 }

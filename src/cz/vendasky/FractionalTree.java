@@ -1,5 +1,9 @@
 package cz.vendasky;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class FractionalTree {
 
     private Fraction actualFraction;
@@ -9,7 +13,6 @@ public class FractionalTree {
         this.actualFraction = new Fraction(startNumerator, startDenominator);
         this.path = "";
     }
-
 
     public Fraction getActualFraction() {
         return actualFraction;
@@ -39,5 +42,15 @@ public class FractionalTree {
 
     public String getPath() {
         return new StringBuilder(path).reverse().toString();
+    }
+
+    public static String readFromInputFile(String pathToFile) {
+        String line = null;
+        try (BufferedReader reader = new BufferedReader(new FileReader(pathToFile))) {
+            line = reader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return line;
     }
 }
