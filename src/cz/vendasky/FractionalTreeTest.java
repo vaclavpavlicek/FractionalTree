@@ -41,7 +41,7 @@ public class FractionalTreeTest {
 
     @Test
     public void shouldReadFromInputFile() {
-        assertEquals("253 1110", FractionalTree.readFromInputFile("/home/vaclav/IdeaProjects/FractionalTree/inputs/01.in"));
+        assertEquals("460 129", FractionalTree.readFromInputFile("/home/vaclav/IdeaProjects/FractionalTree/inputs/01.in"));
     }
 
     @Test
@@ -51,7 +51,7 @@ public class FractionalTreeTest {
 
     @After
     public void run() {
-        FractionalTree.run("/home/vaclav/IdeaProjects/FractionalTree/inputs/01.in", "/home/vaclav/IdeaProjects/FractionalTree/outputs/01.txt");
+        FractionalTree.run("/home/vaclav/IdeaProjects/FractionalTree/inputs/08.in", "/home/vaclav/IdeaProjects/FractionalTree/outputs/08.txt");
     }
 
 }

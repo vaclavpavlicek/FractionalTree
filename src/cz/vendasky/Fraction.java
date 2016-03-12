@@ -2,19 +2,19 @@ package cz.vendasky;
 
 public class Fraction {
 
-    private int numerator;
-    private int denominator;
+    private long numerator;
+    private long denominator;
 
-    public Fraction(int numerator, int denominator) {
+    public Fraction(long numerator, long denominator) {
         this.numerator = numerator;
         this.denominator = denominator;
     }
 
-    public int getNumerator() {
+    public long getNumerator() {
         return this.numerator;
     }
 
-    public int getDenominator() {
+    public long getDenominator() {
         return this.denominator;
     }
 
