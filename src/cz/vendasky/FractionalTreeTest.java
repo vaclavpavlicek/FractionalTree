@@ -1,5 +1,6 @@
 package cz.vendasky;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -40,12 +41,17 @@ public class FractionalTreeTest {
 
     @Test
     public void shouldReadFromInputFile() {
-        assertEquals("253 1110", FractionalTree.readFromInputFile("/home/vaclav/IdeaProjects/FractionalTree/outputs/01.in"));
+        assertEquals("253 1110", FractionalTree.readFromInputFile("/home/vaclav/IdeaProjects/FractionalTree/inputs/01.in"));
     }
 
     @Test
     public void shouldCreateFractionalTree() {
         assertNotNull(FractionalTree.createFractionalTree("154 41"));
+    }
+
+    @After
+    public void run() {
+        FractionalTree.run("/home/vaclav/IdeaProjects/FractionalTree/inputs/01.in", "/home/vaclav/IdeaProjects/FractionalTree/outputs/01.txt");
     }
 
 }

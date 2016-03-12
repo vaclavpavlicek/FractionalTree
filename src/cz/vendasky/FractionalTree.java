@@ -1,8 +1,6 @@
 package cz.vendasky;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class FractionalTree {
 
@@ -58,5 +56,18 @@ public class FractionalTree {
         int startNumerator = Integer.parseInt(line.substring(0, line.indexOf(" ")));
         int startDenominator = Integer.parseInt(line.substring(line.indexOf(" ") + 1));
         return new FractionalTree(startNumerator, startDenominator);
+    }
+
+    public static void run(String pathToInputFile, String pathToOutputFile) {
+        String line = readFromInputFile(pathToInputFile);
+        FractionalTree fractionalTree = createFractionalTree(line);
+        fractionalTree.findPathToRoot();
+        try {
+            PrintWriter writer = new PrintWriter(pathToOutputFile, "UTF-8");
+            writer.println(fractionalTree.getPath());
+            writer.close();
+        } catch (FileNotFoundException | UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 }
