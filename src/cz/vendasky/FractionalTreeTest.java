@@ -3,9 +3,7 @@ package cz.vendasky;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class FractionalTreeTest {
 
@@ -13,7 +11,7 @@ public class FractionalTreeTest {
 
     @Before
     public void setUp() {
-        fractionalTree = new FractionalTree(154, 41);
+        fractionalTree = FractionalTree.createFractionalTree("154 41");
     }
 
     @Test
@@ -43,6 +41,11 @@ public class FractionalTreeTest {
     @Test
     public void shouldReadFromInputFile() {
         assertEquals("253 1110", FractionalTree.readFromInputFile("/home/vaclav/IdeaProjects/FractionalTree/outputs/01.in"));
+    }
+
+    @Test
+    public void shouldCreateFractionalTree() {
+        assertNotNull(FractionalTree.createFractionalTree("154 41"));
     }
 
 }

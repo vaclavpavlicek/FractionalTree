@@ -9,7 +9,7 @@ public class FractionalTree {
     private Fraction actualFraction;
     private String path;
 
-    public FractionalTree(int startNumerator, int startDenominator) {
+    private FractionalTree(int startNumerator, int startDenominator) {
         this.actualFraction = new Fraction(startNumerator, startDenominator);
         this.path = "";
     }
@@ -52,5 +52,11 @@ public class FractionalTree {
             e.printStackTrace();
         }
         return line;
+    }
+
+    public static FractionalTree createFractionalTree(String line) {
+        int startNumerator = Integer.parseInt(line.substring(0, line.indexOf(" ")));
+        int startDenominator = Integer.parseInt(line.substring(line.indexOf(" ") + 1));
+        return new FractionalTree(startNumerator, startDenominator);
     }
 }
