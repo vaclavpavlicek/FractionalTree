@@ -31,7 +31,13 @@ public class FractionalTreeTest {
     @Test
     public void shouldReturnReversedPath() {
         fractionalTree.generateParentOfActualFraction();
-        assertEquals("L", fractionalTree.getPath());
+        assertEquals("R", fractionalTree.getPath());
+    }
+
+    @Test
+    public void shouldFindPathToRoot() {
+        fractionalTree.findPathToRoot();
+        assertEquals("LLLLLLLLLRRRLRRR", fractionalTree.getPath());
     }
 
 }

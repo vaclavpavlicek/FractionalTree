@@ -19,16 +19,22 @@ public class FractionalTree {
         if (this.actualFraction.getNumerator() > this.actualFraction.getDenominator()) {
             this.actualFraction = new Fraction(this.actualFraction.getNumerator() - this.actualFraction.getDenominator(),
                     this.actualFraction.getDenominator());
-            path += "L";
+            path += "R";
         } else {
             this.actualFraction = new Fraction(this.actualFraction.getNumerator(),
                     this.actualFraction.getDenominator() - this.actualFraction.getNumerator());
-            path += "R";
+            path += "L";
         }
     }
 
     public boolean checkIfRootFound() {
         return this.actualFraction.getNumerator() == 1 && this.actualFraction.getDenominator() == 1;
+    }
+
+    public void findPathToRoot() {
+        while (!checkIfRootFound()) {
+            generateParentOfActualFraction();
+        }
     }
 
     public String getPath() {
